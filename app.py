@@ -128,13 +128,14 @@ try:
     font_path = get_korean_font()
     wordcloud = WordCloud(
         font_path=font_path,
-        width=800,
-        height=400,
+        width=1200,
+        height=700,
         background_color="white",
         colormap="Dark2",
-        max_words=50,
+        max_words=200,
         prefer_horizontal=0.9,
-    ).generate_from_frequencies(trends_data)
+        relative_scaling=0.4,
+).generate_from_frequencies(trends_data)
 except Exception as exc:
     st.error("워드클라우드를 생성하지 못했습니다.")
     st.code(f"{type(exc).__name__}: {exc}")
