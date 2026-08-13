@@ -16,7 +16,7 @@ st.write("구글 트렌드의 일간 검색어 데이터를 기반으로 생성�
 # 2. 데이터 수집 함수 (봇 차단 우회 및 예외 처리 추가)
 @st.cache_data(ttl=600)
 def get_trends_data():
-    rss_url = 'https://trends.google.com/trends/trendingsearches/daily/rss?geo=KR'
+    rss_url = 'https://trends.google.com/trending?geo=KR'
     
     # 일반 크롬 브라우저인 것처럼 위장
     headers = {
