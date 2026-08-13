@@ -154,6 +154,12 @@ st.caption(
     "데이터 출처: [Google Trends 인기 급상승 검색어]"
     "(https://trends.google.com/trending?geo=KR) · 약 10분간 캐시됩니다."
 )
+time_range = st.selectbox(
+    "시간 범위",
+    options=[1, 4, 12, 24],
+    format_func=lambda hour: f"최근 {hour}시간",
+    index=3,
+)
 
 with st.expander("상세 검색량 데이터 확인하기"):
     dataframe = pd.DataFrame(
